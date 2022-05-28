@@ -279,7 +279,7 @@ a{
     }
 
     .right-section{
-        flex-direction: column-reverse;
+        flex-direction:column-reverse;
     }
 
     .left-section{
