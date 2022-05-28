@@ -7,7 +7,7 @@ html{
 }
 
 .background , .background1{
-    background: rgba(0, 0, 0, 0.7) url('mid-photo.jpg');
+    background: rgba(0, 0, 0, 0.7) url('/img/mid-photo.jpg');
     background-size: cover;
     background-blend-mode: lighten;
 }
@@ -17,6 +17,8 @@ html{
 .heading{
     padding: 1px 1px;
 }
+
+
 .navbar{
     display: flex;
     align-items: center;
@@ -27,20 +29,16 @@ html{
 
 
 .navlist{
-    width: 50%;
     display: flex;
     align-items: center;
     padding: 0px 154px;
-}
-.snav{
-    width: 22%;
 }
 
 
 
 .navlist li a{
 text-decoration: none;
-font-size: 15pxpx;
+font-size: 26px;
 color: rgb(255, 0, 0);
 }
 
@@ -51,7 +49,7 @@ color: rgb(255, 0, 0);
 .navlist li{
     
     list-style-type: none;
-    padding: 20px;
+    padding: 18px;
     font-size: 21px;
        
 }
@@ -95,7 +93,6 @@ a{
 .Next{
     background: none;
     text-decoration: none;
-
 }
 .number{
     padding: 10px;
@@ -152,17 +149,23 @@ a{
 
 .about{
     text-align: center;
-    background-color: rgb(189, 255, 233);
+    background-color:rgb(255, 0, 0);
     padding: 47px 43px;
 }
 
-.fhaed{
-    font-size: 30px;
+.fhaed {
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    background-color: blue;
+    font-size: 50px;
 }
 
 .shaed{
-    font-size: 28px;
-    padding: 20px 97px;
+    font-size: 36px;
+    font-style: italic;
+    color: white;
+    padding: 30px 0px;
 }
 .contact{
     background-color: rgb(0, 0, 0);
@@ -201,7 +204,7 @@ a{
 
 .infocon li a{
     text-decoration: none;
-    font-size: 15px;
+    font-size: 26px;
     color: rgb(255, 0, 0);
     }
     
@@ -287,3 +290,10 @@ a{
         background-blend-mode: darken;
     }
 }
+
+
+
+
+
+
+
