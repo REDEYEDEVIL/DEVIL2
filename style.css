@@ -7,7 +7,7 @@ html{
 }
 
 .background , .background1{
-    background: rgba(0, 0, 0, 0.7) url('mid-photo.jpg');
+    background: rgba(0, 0, 0, 0.744) url('Top-logo.jpg');
     background-size: cover;
     background-blend-mode: lighten;
 }
