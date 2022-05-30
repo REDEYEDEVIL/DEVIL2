@@ -1,322 +1,309 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+   transition: all .2s linear;
+   text-transform: capitalize;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+body{
+   background: #eee;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    top: 330px;
+    cursor: pointer;
+    height: 50px;
+}
+
+
+.navlist{
+    display: flex;
+    align-items: center;
+  
+}
+
+
+
+.navlist li a{
+text-decoration: none;
+font-size: 26px;
+color: rgb(255, 0, 0);
+}
+
+.navlist li a:hover{
+    text-decoration: none;
+    color: rgb(255, 147, 147);
+    }
+.navlist li{
+    
+    list-style-type: none;
+    padding: 18px;
+    font-size: 21px;
+       
+}
+
+
+
+.text1{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding: 2%;
+}
+
+.cont{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    
+}
+
+
+
+.infocon{
+    display: flex;
+    align-items: center;
+   ;
+}
+
+
+.infocon li a{
+    text-decoration: none;
+    font-size: 26px;
+    color: rgb(255, 0, 0);
+    }
+    
+    .infocon li a:hover{
+        text-decoration: none;
+        color: rgb(255, 147, 147);
+        }
+    .infocon li{
+        list-style-type: none;
+        padding: 14px 43px;
+        font-size: 21px;
+    }
+
+.container{
+   max-width: 1200px;
+   margin:0 auto;
+   padding:3rem 2rem;
+}
+
+.container .title{
+   font-size: 3.5rem;
+   color:#444;
+   margin-bottom: 3rem;
+   text-transform: uppercase;
+   text-align: center;
+}
+
+.container .products-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:2rem;
+}
+
+.container .products-container .product{
+   text-align: center;
+   padding:3rem 2rem;
+   background: #fff;
+   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+   outline: .1rem solid #ccc;
+   outline-offset: -1.5rem;
+   cursor: pointer;
+}
+
+.container .products-container .product:hover{
+   outline: .2rem solid #222;
+   outline-offset: 0;
+}
+
+.container .products-container .product img{
+   height: 18rem;
+}
+
+.container .products-container .product:hover img{
+   transform: scale(.9);
+}
+
+.container .products-container .product h3{
+   padding:.5rem 0;
+   font-size: 2rem;
+   color:#444;
+}
+
+.container .products-container .product:hover h3{
+   color:#27ae60;
+}
+
+.container .products-container .product .price{
+   font-size: 2rem;
+   color:#444;
+}
+
+.products-preview{
+   position: fixed;
+   top:0; left:0;
+   min-height: 100vh;
+   width: 100%;
+   background: rgba(0,0,0,.8);
+   display: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.products-preview .preview{
+   display: none;
+   padding:2rem;
+   text-align: center;
+   background: #fff;
+   position: relative;
+   margin:2rem;
+   width: 40rem;
+}
+
+.products-preview .preview.active{
+   display: inline-block;
+}
+
+.products-preview .preview img{
+   height: 20rem;
+}
+
+.products-preview .preview .fa-times{
+   position: absolute;
+   top:1rem; right:1.5rem;
+   cursor: pointer;
+   color:#444;
+   font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+   transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+   color:#444;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+.products-preview .preview .stars{
+   padding:1rem 0;
+   font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+   color:#27ae60;
+}
+
+.products-preview .preview .stars span{
+   color:#999;
+}
+
+.products-preview .preview p{
+   line-height: 1.5;
+   padding:1rem 0;
+   font-size: 1.6rem;
+   color:#777;
+}
+
+.products-preview .preview .price{
+   padding:1rem 0;
+   font-size: 2.5rem;
+   color:#27ae60;
+}
+
+.products-preview .preview .buttons{
+   display: flex;
+   gap:1.5rem;
+   flex-wrap: wrap;
+   margin-top: 1rem;
+}
+
+.products-preview .preview .buttons a{
+   flex:1 1 16rem;
+   padding:1rem;
+   font-size: 1.8rem;
+   color:#444;
+   border:.1rem solid #444;
+}
+
+.products-preview .preview .buttons a.cart{
+   background: #444;
+   color:#fff;
+}
+
+.products-preview .preview .buttons a.cart:hover{
+   background: #111;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+   background: #444;
+   color:#fff;
+}
+
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
    
-   <!-- font awesome cdn link  -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-   <!-- custom css file link  -->
-   <link rel="stylesheet" href="CNG.css">
-
-   <!-- custom js file link  -->
-   <script src="CNG.js" defer></script>
-
-</head>
-<body>
-
-   <nav class="navbar h-nav background1">
-    <ul class="navlist  v-class">    
-        <li><a href="index.html">Home</a></li>
-        <li><a href="some.html">Eletrical</a></li>
-        <li><a href="some.html">Petrol</a></li>
-        <li><a href="some.html">Diesel</a></li>
-        <li><a href="some.html">Rnew Insurance Policy</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-     
-  </nav>   
    
-<div class="container">
+   .navlist li a {
+      font-size: 24px;
+  }
 
-   <h3 class="title"> Lastest CNG vehicle </h3>
+}
 
-   <div class="products-container">
+@media (max-width:768px){
 
-      <div class="product" data-name="p-1">
-         <img src="C1.png" alt="">
-         <h3>Ape Xtra LDX+ CNG PU</h3>
-         <div class="price">₹ 2.16 Lakh <sup>*</sup></div>
-      </div>
+   .products-preview .preview img{
+      height: 25rem;
+   }
 
-      <div class="product" data-name="p-2">
-         <img src="C2.png" alt="">
-         <h3>Bajaj Maxima CNG </h3>
-         <div class="price">₹ 2.60 lakh<sup>*</sup></div>
-      </div>
+   .navlist li {
+      list-style-type: none;
+      padding: 6px 9px;
+      font-size: 21px;
+  }
+  
+  .navlist li a {
+   font-size: 11px;
+}
 
-      
-      <div class="product" data-name="p-3">
-         <img src="C3.png" alt="">
-         <h3>Mahindra Jeeto</h3>
-         <div class="price">₹ 4.72 lakh<sup>*</sup></div>
-      </div>
+.infocon li a {
+   text-decoration: none;
+   font-size: 16px;
+   color: rgb(255, 0, 0);
+}
 
-      
-      <div class="product" data-name="p-4">
-         <img src="C4.png" alt="">
-         <h3>TATA ACE GOLD CNG+</h3>
-         <div class="price"> ₹ 6.35 lakh</div>
-      </div>
+.infocon li {
+   list-style-type: none;
+   padding: 0px 24px;
+   font-size: 21px;
+}
 
-      
-      <div class="product" data-name="p-5">
-         <img src="C5.1.webp" alt="">
-         <h3>Maruti Suzuki Super Carry CNG </h3>
-         <div class="price">₹ 5.83 Lakh <sup>*</sup></div>
-      </div>
+  
 
-      
+}
 
-      <div class="product" data-name="p-6">
-         <img src="C6.jpg" alt="">
-         <h3>MAHINDRA BOLERO MAXI TRUCK PLUS CNG SPECIFICATIONS</h3>
-         <div class="price">₹ 7.76 lakh<sup>*</sup></div>
-      </div>
+@media (max-width:450px){
 
-      <div class="product" data-name="p-7">
-         <img src="C7.jfif" alt="">
-         <h3>Ashok Leyland DOST CNG</h3>
-         <div class="price">₹ 7.99 lahk<sup>*</sup></div>
-      </div>
+   html{
+      font-size: 50%;
+   }
 
-      <div class="product" data-name="p-8">
-         <img src="C8.png" alt="">
-         <h3>EICHER PRO 2114XP CNG</h3>
-         <div class="price">₹ 23.90-25.40<sup>*</sup></div>
-      </div>
-
-      <div class="product" data-name="p-9">
-         <img src="C9.jpg" alt="">
-         <h3>TATA 1412g LPT</h3>
-         <div class="price">₹ 21.97-23.20 lakh<sup>*</sup></div>
-      </div>
-
-      <div class="product" data-name="p-10">
-         <img src="C10.jfif" alt="">
-         <h3>Ashok Leyland eComet 1615 HE CNG</h3>
-         <div class="price">₹ 28 lakh<sup>*</sup></div>
-      </div>
-      
-   </div>
-
-</div>
-
-<div class="products-preview">
-
-   <div class="preview" data-target="p-1">
-      <i class="fas fa-times"></i>
-      <img src="C1.png" alt="">
-      <h3>Ape Xtra LDX+ CNG PU</h3>
-      <p>The Ape Xtra LDX is the popular cargo variant launched in early 2020 in the BS6 avatar. The ape brand is highly popular in the cargo segment, and the company took the lead in introducing this product. The Ape Xtra LDX promises the same DNA of superior performance, higher power, refined engine, lower maintenance, and higher profit to its owner.</p><a href="some.html"><samp>know more</samp></a>
-      <div class="price">₹ 2.61 lakh<sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">Buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-2">
-      <i class="fas fa-times"></i>
-      <img src="C2.png" alt="">
-      <h3>Bajaj Maxima CNG</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </div>
-      <p>ye bi pata nahi</p>
-      <div class="price">₹ 2.60 lakh<sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-3">
-      <i class="fas fa-times"></i>
-      <img src="C3.png" alt="">
-      <h3>Mahindra Jeeto</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </div>
-      <p>pata nahi</p>
-      <div class="price">4.72 lakh<sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-4">
-      <i class="fas fa-times"></i>
-      <img src="C4.png" alt="">
-      <h3>TATA ACE GOLD CNG+</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
-      <div class="price">₹ 6.35 lahk<sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">add to cart</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-5">
-      <i class="fas fa-times"></i>
-      <img src="C5.1.webp" file="" alt="">
-      <h3>Maruti Suzuki Super Carry CNG </h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </div>
-      <p> pata nahi</p>
-      <div class="price">₹ 5.83 Lakh <sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-6">
-      <i class="fas fa-times"></i>
-      <img src="C6.jpg" alt="">
-      <h3>MAHINDRA BOLERO MAXI TRUCK PLUS CNG SPECIFICATIONS</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </div>
-      <p>The Bolero Maxitruck Plus CNG is the best-in-class pick-up that carries forward the legendary toughness of its predecessor. Adding to it is the CNG engine's unparalleled performance along with the pick-up's striking style, strong suspension and large tyres that set it a cut above the rest.</p>
-      <div class="price">₹ 7.76<sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-7">
-      <i class="fas fa-times"></i>
-      <img src="C7.jfif" alt="">
-      <h3>Ashok Leyland DOST CNG</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </div>
-      <p>Ashok Leyland understands that the economic stability of a country depends on  safe and timely transportation of goods, and builds vehicles that facilitate it. DOST, One of the Ashok Leyland’s award winning light commercial vehicles now comes with i-GEN6 technology which is an ideal vehicle to ensure  last mile transportation of goods loaded off bigger trucks, into congested city lanes, and through tough terrains, to even the remotest parts of the country. The car-like ease and fuel efficiency of DOST makes it a convenient option to navigate through smaller lanes, ensuring door-step delivery of goods to the consumer</p>
-      <div class="price">₹ 7.99 lakh<sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-8">
-      <i class="fas fa-times"></i>
-      <img src="C8.png" alt="">
-      <h3>EICHER PRO 2114XP CNG</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </div>
-      <p>Introducing India’s First 16 t CNG Truck Pro2114XP, which runs on CNG, the clean and green fuel. Best suited for intercity movement, this heavy duty truck delivers goods on time with Best in Class Payload, Mileage and lowest Maintenance, truly making it the Mega City Badshah. The Pro 2114XP CNG promises to make you the Badshah of your Business with maximum profitability and least damage to the environment.</p>
-      <div class="price">₹ 23.90-25.40 lahk <sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   <div class="preview" data-target="p-9">
-      <i class="fas fa-times"></i>
-      <img src="C9.jpg" alt="">
-      <h3>TATA 1412g LPT</h3>
-      <div class="stars">
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star"></i>
-         <i class="fas fa-star-half-alt"></i>
-         <span>( 250 )</span>
-      </di>
-      <p> It has got the world class safety components like Auto Shut off valve, High pressure filter, Refuelling interlock device, Electronic Viscous fan, Swagelok fittings for better safety and higher aggregate life.</p>
-      <div class="price">₹ 21.97-23.20 lakh<sup>*</sup></div>
-      <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">Book Test Drive</a>
-      </div>
-   </div>
-
-   
- </div>
-
- <div class="preview" data-target="p-10">
-   <i class="fas fa-times"></i>
-   <img src="C10.jfif" alt="">
-   <h3>TATA 1412g LPT</h3>
-   <div class="stars">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star-half-alt"></i>
-      <span>( 250 )</span>
-   </di>
-   <p> It has got the world class safety components like Auto Shut off valve, High pressure filter, Refuelling interlock device, Electronic Viscous fan, Swagelok fittings for better safety and higher aggregate life.</p>
-   <div class="price">₹ 28 lahk<sup>*</sup></div>
-   <div class="buttons">
-      <a href="#" class="buy">buy now</a>
-      <a href="#" class="cart">Book Test Drive</a>
-   </div>
-</div>
-
-
-</div>
-
-</div>
-
-<section class="contact">
-    <h2 class="text1" id="contact">Contact Us</h2>
-    <div class="infocon">
-     <ul class=" cont">    
-      <li><a href="tel:+918329615533">Call</a></li>
-      <li><a href="mailto:reliableservice21@hotmail.com">E-Mail</a></li>
-      <li><a href="some.html">Enquiry</a></li>
-      <li><a href="https://wa.me/+917559225115">Whatapp</a></li>
-  </ul>
-    </div>
-    </section>
-
-</body>
-</html>
+}
