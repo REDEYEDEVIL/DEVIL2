@@ -74,7 +74,7 @@ color: rgb(255, 0, 0);
 .infocon{
     display: flex;
     align-items: center;
-    padding: 0px 393px;
+   ;
 }
 
 
@@ -283,6 +283,19 @@ color: rgb(255, 0, 0);
   .navlist li a {
    font-size: 11px;
 }
+
+.infocon li a {
+   text-decoration: none;
+   font-size: 16px;
+   color: rgb(255, 0, 0);
+}
+
+.infocon li {
+   list-style-type: none;
+   padding: 0px 24px;
+   font-size: 21px;
+}
+
   
 
 }
